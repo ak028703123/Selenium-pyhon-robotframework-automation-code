@@ -1,0 +1,56 @@
+##satheesh
+HistoryTab_PatientName: Archie,Alysha Mary
+HistoryTab_PatientName_Header: Alysha Mary Archie
+HistoryTab_PatientAuditNumber_Header: 14022959
+RA_OverDue_Patient: '1548'
+RA_NonOverdue_Patient: '1575'
+BA_OverDue_Patient: '2933'
+BA_NonOverdue_Patient: '1250'
+RA_Overdue_AuditStatus:  Record Request Overdue
+RA_Non_Overdue_AuditStatus: Medical Record Requested
+BA_Overdue_AuditStatus: Findings Response Overdue
+BA_Non_Overdue_AuditStatus: Findings Notification Sent
+Items Per Page: 20
+Audit_Status_Name: Findings Notification Sent
+Page_Number: 3
+#AN
+FromstatusDate: 11/01/2022
+TostatusDate: 11/18/2022
+HistoryTab_PatientName1: Shivers,Rachel Katie
+HistoryTab_PatientAccountNumber: '9761'
+HistoryTab_PatientAccNumber: '1056'
+AuditHistoryDownloadedExcelPath: "/Downloads/AuditHistoryResults-"
+
+#SQL query
+#AuditHistoryDashabordSqlQuery1: "EXEC [ProperPay].[spGetAuditHistoryInfo]   @OrderBy = 'PatientName', @OrderDirection = 'ASC', @PageNumber = 1, @PageSize = 100"
+AuditHistoryDashabordSqlQuery1:  "select * from RS.Audit_AuditInfo a  where billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and auditstatus in ('RecordRequestOverdue','MedicalRecordRequested','FindingsResponseOverdue','FindingsNotificationSent','AppealInProgress','MedicalRecordReceived')"
+RaOverdueRecords: "select * from RS.Audit_AuditInfo a  where billingprovidernumber in ('S005289','S001979','S002073') and auditstatus in ('RecordRequestOverdue')"
+RaNonOverdueRecords: "select * from RS.Audit_AuditInfo a  where billingprovidernumber in ('S005289','S001979','S002073') and auditstatus in ('MedicalRecordRequested')"
+BaOverdueRecords: "select * from RS.Audit_AuditInfo a  where billingprovidernumber in ('S005289','S001979','S002073') and auditstatus in ('FindingsResponseOverdue')"
+BaNonOverdueRecords: "select * from RS.Audit_AuditInfo a  where billingprovidernumber in ('S002245','S001979','S002073') and auditstatus in ('FindingsNotificationSent')"
+UploadDocumentEnabled: "select * from RS.Audit_AuditInfo where auditstatus in ('MedicalRecordReceived','AppealInProgress','AppealSubmitted','Reviewinprogress')"
+UploadDocumentDisabled: "select * from RS.Audit_AuditInfo where auditstatus not in ('MedicalRecordReceived','AppealInProgress','AppealSubmitted','Reviewinprogress')"
+
+##############################################################################################
+
+
+#satheesh
+#HistoryTab_PatientName: Armond,Misty Lucia
+#HistoryTab_PatientName_Header: Misty Lucia Armond
+#HistoryTab_PatientAuditNumber_Header: 16191430
+#RA_OverDue_Patient: '004043'
+#RA_NonOverdue_Patient: '002353'
+#BA_OverDue_Patient: '001367'
+#BA_NonOverdue_Patient: '004079'
+#RA_Overdue_AuditStatus:  Record Request Overdue
+#RA_Non_Overdue_AuditStatus: Medical Record Requested
+#BA_Overdue_AuditStatus: Findings Response Overdue
+#BA_Non_Overdue_AuditStatus: Findings Notification Sent
+#Items Per Page: 20
+#Audit_Status_Name: Findings Notification Sent
+##AN
+#FromstatusDate: 11/01/2022
+#TostatusDate: 11/18/2022
+#HistoryTab_PatientName1: Shivers,Rachel Katie
+#HistoryTab_PatientAccountNumber: '008525'
+#HistoryTab_PatientAccNumber: '001306'

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.3 on win32)" generated="20230718 17:44:17.907" rpa="false" schemaversion="3">
+<suite id="s1" name="CommunicationPortal BillingAnalyst DashBoardsTestCases" source="C:\ProperPayProject\ProperPay_Automation\TestRepo\UI\RecoveryStudio\SanitySuite\CommunicationPortal_BillingAnalyst_DashBoardsTestCases.robot">
+<test id="s1-t1" name="Test 1 :ProperPay:Communication Portal BA Dashboard_validate_Upload of Non PDF file. (Appeal findings tile)" line="16">
+<kw name="Launch Communication Portal Page" library="CommonFunctionality" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:18.440"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230718 17:44:18.440" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001EA612BFD00&gt;</msg>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:18.440"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:18.440"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-web-security</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:18.440"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>allow-running-insecure-content</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:18.440"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20230718 17:44:18.440" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:44:20.083"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${comm_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230718 17:44:20.083" level="INFO">Opening url 'http://portal.cgicleve.com/'</msg>
+<status status="PASS" starttime="20230718 17:44:20.083" endtime="20230718 17:45:06.600"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10x</arg>
+<arg>2s</arg>
+<arg>Title Should Be</arg>
+<arg>${comm_LandingPageTitle}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${comm_LandingPageTitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230718 17:45:06.609" level="INFO">Page title is 'ProperPayPortal'.</msg>
+<status status="PASS" starttime="20230718 17:45:06.601" endtime="20230718 17:45:06.609"/>
+</kw>
+<status status="PASS" starttime="20230718 17:45:06.600" endtime="20230718 17:45:06.609"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPageTitleHeader_Locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230718 17:45:06.649" level="INFO">Element '//strong[normalize-space()='Communications Portal Login']' is displayed.</msg>
+<status status="PASS" starttime="20230718 17:45:06.609" endtime="20230718 17:45:06.649"/>
+</kw>
+<status status="PASS" starttime="20230718 17:44:18.440" endtime="20230718 17:45:06.649"/>
+</kw>
+<kw name="Valid User Login" library="LoginPage">
+<arg>${BA_comm_usr_name}</arg>
+<arg>${BA_comm_pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPagePassword_Locator}</arg>
+<arg>${comm_pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:06.649" level="INFO">Typing text 'Portal2021!' into text field '//input[@id='loginPasswordInput']'.</msg>
+<status status="PASS" starttime="20230718 17:45:06.649" endtime="20230718 17:45:06.841"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPageUsername_Locator}</arg>
+<arg>${comm_usr_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:06.841" level="INFO">Typing text 'ProviderUser' into text field '//input[@id='loginUserNameInput']'.</msg>
+<status status="PASS" starttime="20230718 17:45:06.841" endtime="20230718 17:45:07.019"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPagechkUboxPolicyPrivacy_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:07.025" level="INFO">Clicking element '//input[@id='loginUserPolicyCheckbox']'.</msg>
+<status status="PASS" starttime="20230718 17:45:07.019" endtime="20230718 17:45:07.106"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPageLoginButton_Locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:07.106" level="INFO">Clicking button '//button[@id='loginUserButton']'.</msg>
+<status status="PASS" starttime="20230718 17:45:07.106" endtime="20230718 17:45:07.258"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPage_SelectClient_CommPortal_Window}</arg>
+<arg>timeout=120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 17:45:07.258" endtime="20230718 17:45:15.456"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230718 17:45:17.462" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230718 17:45:15.456" endtime="20230718 17:45:17.462"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${c}</var>
+<arg>${Comm_Portal_LoginPage_SelectClient_selector_Locator}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230718 17:45:17.462" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+<msg timestamp="20230718 17:45:17.479" level="INFO">${c} = 1</msg>
+<status status="PASS" starttime="20230718 17:45:17.462" endtime="20230718 17:45:17.479"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${c} &gt; 0</arg>
+<arg>Select From List By Value</arg>
+<arg>${Comm_Portal_LoginPage_SelectClient_selector_Locator}</arg>
+<arg>${Client_Name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPage_SelectClient_selector_Locator}</arg>
+<arg>${Client_Name}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230718 17:45:17.479" level="INFO">Selecting options from selection list '//select[@id='clients']' by value PORTALDEV.</msg>
+<status status="PASS" starttime="20230718 17:45:17.479" endtime="20230718 17:45:17.613"/>
+</kw>
+<status status="PASS" starttime="20230718 17:45:17.479" endtime="20230718 17:45:17.613"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPage_SelectClient_SelectClient_Applybutton_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 17:45:17.614" endtime="20230718 17:45:17.644"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Comm_Portal_LoginPage_SelectClient_SelectClient_Applybutton_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:17.644" level="INFO">Clicking element '//button[@class='secondary small profile'][contains(text(),'Apply')]'.</msg>
+<status status="PASS" starttime="20230718 17:45:17.644" endtime="20230718 17:45:17.727"/>
+</kw>
+<status status="PASS" starttime="20230718 17:45:06.649" endtime="20230718 17:45:17.727"/>
+</kw>
+<kw name="Click Audit Results Tab" library="BillingAnalyst_Dashboard">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Comm_Portal_HomePage_AuditResultsTab_Locator}</arg>
+<arg>timeout=120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230718 17:45:17.728" endtime="20230718 17:45:25.147"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Comm_Portal_HomePage_AuditResultsTab_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230718 17:45:25.147" level="INFO">Clicking element '//div[contains(text(),'Audit Results')]'.</msg>
+<status status="PASS" starttime="20230718 17:45:25.147" endtime="20230718 17:45:25.288"/>
+</kw>
+<status status="PASS" starttime="20230718 17:45:17.728" endtime="20230718 17:45:25.288"/>
+</kw>
+<kw name="Return AppealFindings Review Button locator with patient account number passed by user" library="BillingAnalyst_Dashboard">
+<arg>${PtAccNumAppeal}</arg>
+<kw name="Replace String" library="String">
+<var>${BillingAnalyst_AppealFindings_ReviewButton_Locator_New}</var>
+<arg>${BillingAnalyst_AppealFindings_ReviewButton_Locator}</arg>
+<arg>${PtAccNumAppeal}</arg>
+<arg>${PtAccNumAppeal_PassedByUser}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230718 17:45:25.288" level="INFO">${BillingAnalyst_AppealFindings_ReviewButton_Locator_New} = //div[normalize-space()='1738']//ancestor::div[@class='card selected appeal']//button[contains(text(),'Review')]</msg>
+<status status="PASS" starttime="20230718 17:45:25.288" endtime="20230718 17:45:25.288"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${BillingAnalyst_AppealFindings_ReviewButton_Locator_New}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230718 17:45:25.288" level="INFO">${BillingAnalyst_AppealFindings_ReviewButton_Locator_New} = //div[normalize-space()='1738']//ancestor::div[@class='card selected appeal']//button[contains(text(),'Review')]</msg>
+<status status="PASS" starttime="20230718 17:45:25.288" endtime="20230718 17:45:25.288"/>
+</kw>
+<status status="PASS" starttime="20230718 17:45:25.288" endtime="20230718 17:45:25.288"/>
+</kw>
+<kw name="Click Review button_AppealFindings" library="BillingAnalyst_Dashboard">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BillingAnalyst_AppealFindings_ReviewButton_Locator_New}</arg>
+<arg>timeout=120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230718 17:45:51.749" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /session/489e6cdd831c7aab86814da223fb52e9/screenshot</msg>
+<errors>
+<msg timestamp="20230718 17:45:17.462" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+<msg timestamp="20230718 17:45:51.749" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /session/489e6cdd831c7aab86814da223fb52e9/screenshot</msg>
+<msg timestamp="20230718 17:45:53.798" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

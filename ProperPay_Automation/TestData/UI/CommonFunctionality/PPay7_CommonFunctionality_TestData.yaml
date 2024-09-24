@@ -1,0 +1,26 @@
+BROWSER:    Chrome
+BROWSER1: Edge
+Admin_comm_url:    https://ppayportalwe201.cgicleve.com:5001/
+PPay7_url:    https://properpay7.cgicleve.com/
+PPay7_name:    satheesh.arunachalam@cgi.com
+PPay7_pass:    ProperPay72023!
+PPay7_pass_empty: ''
+PPay7_usr_name_empty: ''
+PPay7_LandingPageTitle:    ProperPay Next Generation App
+
+
+Admin_comm_LandingPageTitle:    AdminUI
+Admin_comm_LoginPageTitle:    Login | IdentityServer
+
+
+
+UserName: ProviderUser
+Reset_Role: Billing Analyst
+Required_Role: Record Analyst
+Reset_Role2: Record Analyst
+Required_Role2: Billing Analyst
+PtName1:  'Bobbi Antonette Hawkinberry'
+PtName2:  'Margie Mildred Fortier'
+PtName3:  'Ada Kelley Alfera'
+PtName4:  'Alysha Mary Archie'
+PatientName_Header: 'Margie Mildred Fortier'

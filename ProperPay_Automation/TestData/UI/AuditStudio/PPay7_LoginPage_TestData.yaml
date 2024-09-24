@@ -1,0 +1,27 @@
+RA_comm_usr_name:    ProviderUser
+RA_comm_pass:    Portal2021!
+BA_comm_usr_name:    ProviderUser
+BA_comm_pass:    Portal2021!
+comm_pass_empty: ''
+comm_usr_name_empty: ''
+comm_pass_invalid:    Portal2021!111
+comm_LandingPageTitle:    ProperPayPortal
+Login_Unscfu_msg:    The portal login attempt was unsuccessful. Please verify your credentials \\nare correct and try again. You may also try the Forgot Password link to \\nreset your password. If you still cannot login after several attempts and \\na password reset, please contact the CGI Portal helpdesk.
+OutLook_Page_Title: Outlook
+OutLook_URL: https://globalmail.cgi.com/owa/
+Outllok_userID: aishwarya.p.nalawade@cgi.com
+Outllok_Password: Aishu@1497
+NewPassword: Portal2022!1234
+#Client_Name: Local
+Client_Name: PORTALDEV
+#Client_Name: HMBCBS
+NewReg_Title: TestTitle
+NewReg_MedicalRecordEmails: abc@cgi.com
+NewReg_AuditFindingEmails_Locator: abc@cgi.com
+NewReg_FirstName: TestFirstName
+NewReg_LastName:  TestLastName
+NewReg_Email: TesterQA143@cgi.com
+NewReg_Client: TestClient
+NewReg_PrvdrFacName: abc
+NewReg_PrvdrFacPhone: 1111111111
+NewReg_PrvdrNum: 001122

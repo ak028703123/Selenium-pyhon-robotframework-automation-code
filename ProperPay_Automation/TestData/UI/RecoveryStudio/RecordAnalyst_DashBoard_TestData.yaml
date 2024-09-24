@@ -1,0 +1,94 @@
+#URL1:
+PtName: Nick Burt Kitchens
+PtAccNumRecordRequest: '1575'
+#1575
+PtAccNumRecordRequest1: '8765'
+PtAccNumRecordRequest2: '89'
+PtAccNumRecordRequest3: '1548'
+ReqExtnPtAccNum2: '8765'
+REPtAccNum: '16530'
+REPtAccNum3: '3268'
+REPtAccNum_OvrDue: '2043'
+#PdfFilepath: "C:\\gitrep\\properpay-automation\\PPay_Project\\TestData\\Portal Certificate Instructions.pdf"
+#NonPdfFilePath:  "C:\\gitrep\\properpay-automation\\PPay_Project\\TestData\\manual console.PNG"
+#PdfFilepath: "C:\\GitRepo\\properpay-automation\\PPay_Project\\TestData\\Portal Certificate Instructions.pdf"
+#NonPdfFilePath: "C:\\GitRepo\\properpay-automation\\PPay_Project\\TestData\\manual console.PNG"
+#PdfFilepath1: "C:\\GitRepo\\properpay-automation\\PPay_Project\\TestData\\PDF 2.pdf"
+PdfFilepath: "\\TestData\\UI\\RecoveryStudio\\Portal Certificate Instructions.pdf"
+NonPdfFilePath:  "\\TestData\\UI\\RecoveryStudio\\TestData\\manual console.PNG"
+PdfFilepath1: "\\TestData\\UI\\RecoveryStudio\\TestData\\PDF 2.pdf"
+RecordRequestDownloadedExcelPath: "/Downloads/RecordRequests-"
+
+CheckboxOptions: Medical Record
+PDFFileName: Portal Development Process & Tips.pdf
+DOB: 05/06/1941
+AuditNum: 14551110
+DOS: 07/02/2014 - 07/04/2014
+MediRecNum: MR00466
+ClaimNum: CLM003852138412916
+ProviderName: Provider0082, Aiden Parker
+ProviderID: 390050
+Esignature : Provider User
+Title: Records/Billing Analyst
+SubscriberID: 5678
+GroupID: 33519
+ClaimType: Inpatient
+AuditStatus: Record Request Overdue
+DivisionCode: 26
+AdmitDate: 07/02/2014
+DischargeDate: 07/04/2014
+ReqExtnPtName: Ada Kelley Alfera
+CheckboxOptions1: Itemized Bill
+CheckboxOptions2: Medical Record
+CheckboxOptions3: Face Sheet
+#satheesh
+DAYS REMAINING UNTIL DUE DATE OVERDUE:  '-1'
+DAYS REMAINING UNTIL DUE DATE NON OVERDUE: '5'
+DAYS REMAINING OVERDUE: Overdue
+
+#AN
+ClaimType1: Outpatient
+PDFNAME:  Portal Development Process & Tips.pdf
+#Teams DB Queries
+#raDashabordReviewOnlyQuery: "select a.auditnumber, a.claimnumber, a.auditstatus,* from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where a. billingprovidernumber in ('004643080','003498625','S002245','S002073','S012223','000020059','000020180','000390063','000390046','000390004','000324354','000390063','000020020','000020046')  and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')"
+#raDashabordExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate, d.duedate, a.* from [ProperPay].[AuditInfo] a join [CAS_REceive].[postage].[ReceivedClaims] b on a.auditnumber=b.auditnumber join [ProperPay].[MedicalRecordRequest]  d on a.auditnumber=d.auditnumber where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from [CAS_REceive].[postage].[ExtensionClaims] c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType='REQMI' and a.auditstatus='MedicalRecordRequested' and d.duedate > getdate() and billingprovidernumber in ('S004942','000020046') order by a.auditnumber desc"
+#raDashabordOPRecordQuery : "select a.auditnumber, a.claimnumber, a.auditstatus,* from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where a. billingprovidernumber in ('004643080','S004942','000390063','S002245','S002073','S012223','000390091','000390266','000390004','000324354','000390063','000020046')  and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')  and claimType = 'O'"
+#raDashabordIPRecordQuery : "select a.auditnumber, a.claimnumber, a.auditstatus,* from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where a. billingprovidernumber in ('004643080','S004942','000390063','S002245','S002073','S012223','000390091','000390266','000390004','000324354','000390063','000020046')  and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')  and claimType = 'I'"
+#raDashboardListAuditQuery : "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on  a.id=b.auditinfoid where  a.auditNumber= "
+
+#Cloud DB Queries
+raDashabordReviewOnlyQuery: "select a.auditnumber, a.claimnumber, a.auditstatus,* from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on a.id=b.auditinfoid where a. billingprovidernumber in ('000324354','000390004') and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')"
+raDashabordExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate, d.duedate, a.* from RS.Audit_AuditInfo a join ADS.Receive_ReceivedClaims b on a.auditnumber=b.auditnumber join RS.Audit_RecordRequest  d on a.auditnumber=d.auditnumber where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from ADS.Receive_ExtensionClaims c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType='REQMI' and a.auditstatus='MedicalRecordRequested' and d.duedate > getdate() and billingprovidernumber in ('S004942','000020046') order by a.auditnumber desc"
+raDashabordOPRecordQuery: "select a.auditnumber, a.claimnumber, a.auditstatus,* from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b  on a.id=b.auditinfoid where a. billingprovidernumber in ('000324354','000390004') and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')  and claimType = 'O'"
+raDashabordIPRecordQuery: "select a.auditnumber, a.claimnumber, a.auditstatus,* from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b  on a.id=b.auditinfoid where a. billingprovidernumber in ('000324354','000390004') and a.auditstatus in ('RecordRequestOverdue','MedicalRecordRequested')  and claimType = 'I'"
+raDashboardListAuditQuery : "select * from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on  a.id=b.auditinfoid where  a.auditNumber= "
+
+#**************************************************************************************************************
+#URL2:
+#PtName: Javarria Kristine Weasenforth
+#PtAccNumRecordRequest: '006994'
+#PtAccNumRecordRequest1: '005046'
+#ReqExtnPtAccNum2: '004339'
+#REPtAccNum: '003122'
+#REPtAccNum3: '002353'
+#REPtAccNum_OvrDue: '005046'
+#
+#CheckboxOptions: Medical Record
+#PDFFileName: Portal Development Process & Tips.pdf
+#DOB:  10/20/1994
+#AuditNum: 16191898
+#DOS: 03/27/2021 - 03/31/2021
+#MediRecNum: 007238
+#ClaimNum: CLM0435699426369483
+#ProviderName: Provider0017
+#ProviderID: 000390091
+#Esignature : Provider User
+#Title: Records/Billing Analyst
+#SubscriberID: 007439
+#GroupID: 046867017
+#ClaimType: Inpatient
+#AuditStatus: Record Request Overdue
+#DivisionCode: 21
+#AdmitDate: 03/27/2021
+#DischargeDate: 03/31/2021
+#ReqExtnPtName: Francis Sarita Rusinovich

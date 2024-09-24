@@ -1,0 +1,24 @@
+UM_comm_usr_name:    ProviderUser
+UM_comm_pass:    Portal2021!
+NewUser_FirstName: TestFirstName
+NewUser_LastName: TestLastName
+NewUser_Email: testemail@abc
+NewUser_PrvdrNum: 12345678
+NewUser_PrvdrNPI:  12345678
+NewUser_Title:  DR
+NewUser_Phone:  9607058046
+NewUser_AdditionalEmail: testemail123@abc
+NewUser_MailingAddress:  xyz
+NewUser_City: ABC
+NewUser_State: ZZZ
+NewUser_Zip: 121
+UserManagement_Name: Aditya Srivastava
+#UserManagement_Name2: aishas sasa
+UserManagement_Name2: Blue Testing
+UserManagement_Email:  Aditya.Srivastava@cgi.com
+UserManagement_ProviderNumber: 390028
+UserManagement_Name_ProviderNumber: Barbara Billing
+UserManagement_NPI:  111111
+UserManagement_Name_NPI: Asha Avula
+UserManagement_Role_Type: Administrator
+UserManagement_AccountStatus: Active

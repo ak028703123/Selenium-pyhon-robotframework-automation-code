@@ -1,0 +1,116 @@
+Payer_comm_usr_name: cloudtester@cgi.com
+Payer_comm_pass: PlatformUser1234!
+#Payer_comm_usr_name: ProviderUser
+#Payer_comm_pass: Portal2021!
+Payer_DAYS_SINCE_ADJUSTMENT_REQUESTED:   '7: 6'
+payer_daysSinceRequestdate:  ' 30 Day(s)'
+Payer_ClaimNumber_not_displayed:  CLM079625736982439
+Payer_ClaimNumber: CLM021171258828718
+
+
+
+
+
+#Satheesh
+PatientName_Header: Robin Earl Michael
+Outstanding_Adjustment_ClaimNumber: CLM021171258828718
+Outstanding_Adjustment_ClaimNumber_Details: CLM079625736982439
+DOB: 12/20/1984
+SubscriberID: 1509
+GroupID: 33503
+AuditNum: 14551138
+AuditType: MSDRG
+AuditStatus: Outstanding Adjustment Request
+ProviderName: Provider0093, Allen Travis
+ProviderNumber: 390050
+ClaimNum: CLM079625736982439
+MediRecNum: MR00475
+AdmitDate: 03/11/2014
+DischargeDate: 03/14/2014
+PaidDate: 03/18/2022
+AdjustmentRequested: 04/26/2023
+Original Gross Pay: $11,822.47
+Original Net Pay: $11,586.13
+Identified Gross Pay: $11,571.40
+Identified Net Pay: $11,335.06
+Adjustor Name: N/A
+Adjustment date: N/A
+Payer Confirmed Pay: $0.00
+Payer Confirmed Savings: $251.00
+Region: AL
+DivisionCode: 21
+Reference Claim: 345267
+Findings Letter Date: 03/18/2022
+DAYS_SINCE_REQUEST_DATE: Today
+Identified_Savings: $250.29
+Adjustment_User: Aishwarya Nalawade
+PtAuditNumFilter: 14508925
+PtProviderNumFilter: 390028
+Audit Status filter option: OutstandingAdjustmentRequest
+Adjustment History AuditStatus:  Outstanding Adjustment Request
+Payer_DAYS_SINCE_ADJUSTMENT_REQUESTED_TODAY: '7: 6'
+payer_daysSinceRequestdateToday: ' Today '
+Items Per Page_OA: 5
+Items Per Page_AH: 5
+
+OutstandingAdjustmentDownloadedExcelPath: "/Downloads/OutstandingAdjustments-"
+AdjustmentHistoryDownloadedExcelPath: "/Downloads/AdjustmentHistory-"
+FinalAppealsHistoryDownloadedExcelPath: "/Downloads/FinalAppealHistory-"
+OutstandingFinalAppealDownloadedExcelPath: "/Downloads/OutstandingFinalAppeals-"
+
+
+
+
+
+
+
+#AN
+#Outstanding_ClaimNumber: CLM021171258828718
+#Latest_PAYER_CONFIRMED_PAY: 6213.74
+Old_PAYER_CONFIRMED_PAY: 5213.74
+Adjustment Reason: Test
+#Payer_Esignature: Aishwarya Nalawade
+#Payer_Title:  Payer
+Deny Adjustment Reason: Test1
+#Adjustment_History_ClaimNumber:   CLM079625736982439
+
+#VJ
+Payer_Esignature: Provider User
+Payer_Title:  Payer
+
+######teams queries
+##payerDashabordSqlQuery1:  "Select servicingprovidernumber, AuditStatus, ClaimNumber, AuditNumber, ServicingProviderNumber from ProperPay.auditinfo where ReadyForAdjustment = 1 And AdjustmentDate is null and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('S007409', 'S002245', 'S002073', 'P029339')"
+#
+#payerDashabordSqlQuery1: "Select * from ProperPay.auditinfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('002767105','S002000','S002245')"
+#
+##payerDashabordSqlQuery1: "Select * from ProperPay.auditinfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('002767105','000020180','000000001000','427491891A','434953304','362739571M','000020034','428352338','427352885B','000426511002','000020007','000390266','000390091','002767106','000324349','000020264','000020180','000020059','000020020','000020100','000390228','000020149','000020027','S007409','S002245','S002073','S003894','000390107','002767249')"
+#payerDashabordSqlQuery2: "Select * from ProperPay.FindingsDetail where AuditNumber = "
+##payerDashabordSqlQuery1: "Select a.*,b.*,c.* from [ProperPay].[MedicalRecordRequest] a, ProperPay.auditinfo b, ProperPay.FindingsDetail c where a.auditnumber = b.auditnumber and	 a.auditnumber = c.auditnumber and b.ReadyForAdjustment = 1 And b.AdjustmentDate is null and b.Auditstatus='OutstandingAdjustmentRequest'"
+##payerDashabordSqlQuery1:  "SELECT DISTINCT ai.AuditNumber, ai.ClaimNumber, ai.Source AS '*** SOURCE ***', ai.ClaimKey, ai.AuditStatus, ai.ReviewLevel, ai.BillingProviderNumber, ai.ProviderName, Audits = (SELECT Count(*) FROM ProperPay.AuditInfo WHERE AuditNumber = ai.AuditNumber),RecordRequests = (SELECT Count(*) FROM ProperPay.MedicalRecordRequest WHERE AuditNumber = ai.AuditNumber),RecordRequestDate = (SELECT TOP (1) RequestDate FROM ProperPay.MedicalRecordRequest WHERE AuditNumber = ai.AuditNumber),RecordReceivedDate = (SELECT TOP (1) ReceiveDate FROM ProperPay.MedicalRecordRequest WHERE AuditNumber = ai.AuditNumber),    InitialFindings = (SELECT Count(*) FROM ProperPay.FindingsDetail WHERE AuditNumber = ai.AuditNumber AND AppealInfoID = 0),FindingsLetterDate = (SELECT DISTINCT TOP (1) LetterSentDate FROM ProperPay.FindingsDetail f WHERE ai.AuditNumber = f.AuditNumber AND f.AppealInfoID = 0),Appeals = (SELECT Count(*) FROM ProperPay.AppealInfo WHERE AuditNumber = ai.AuditNumber),AppealLEV1LetterDate = (SELECT TOP (1) LetterSentDate FROM ProperPay.FindingsDetail fdINNER JOIN ProperPay.AppealInfo appeal ON appeal.ID = fd.AppealInfoID WHERE fd.AuditNumber = ai.AuditNumber AND AppealType = 'LEV1'), AppealLEV2LetterDate = (SELECT TOP (1) LetterSentDate FROM ProperPay.FindingsDetail fd INNER JOIN ProperPay.AppealInfo appeal ON appeal.ID = fd.AppealInfoID WHERE fd.AuditNumber = ai.AuditNumber AND AppealInfoID != 0 AND AppealType = 'LEV2'),TotalFindings = (SELECT Count(*) FROM ProperPay.FindingsDetail WHERE AuditNumber = ai.AuditNumber), BillLines = (SELECT Count(*) FROM ProperPay.BillLine bl WHERE bl.AuditInfoId = ai.Id) FROM ProperPay.AuditInfo ai JOIN ProperPay.FindingsDetail fd ON fd.AuditInfoID = ai.ID where Auditstatus='OutstandingAdjustmentRequest' ORDER BY ai.AuditStatus, TotalFindings"
+#payerDashabordSqlQuery3: "Select * from ProperPay.auditinfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('002767105','S002000','S004942','S005289')  and ClaimType = 'I'"
+#payerDashabordSqlQuery4: "Select * from ProperPay.auditinfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('002767105','S002000','S004942','S005289')  and ClaimType = 'O'"
+#payerDashabordSqlQuery5: "SELECT DISTINCT ai.AuditNumber, ai.ClaimNumber, ai.ClaimKey, ai.AuditStatus, ai.BillingProviderNumber, line.*, fd.NewGrossPay,fd.NewNetPay, fd.IdentifiedGrossSavings,fd.IdentifiedNetSavings FROM ProperPay.AuditInfo ai LEFT JOIN ProperPay.BillLine line ON line.AuditInfoID = ai.ID LEFT JOIN ProperPay.FindingsDetail fd ON fd.AuditInfoID = ai.ID Where ai.auditnumber= "
+#PayerDashboard_Analytics_ReportName: "Audit Summaries by Errors"
+#OutstandingfinalAppealsSqlQuery: "Select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where AuditStatus in('AppealSubmitted') and billingprovidernumber in ('S002245','S007409','S005290','S007733','S002000','S005289','S001829')"
+#finalAppealsSqlQuery: "Select * from [ProperPay].[AuditInfo] where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade') and billingprovidernumber in ('S002245','S007409','S005290')"
+#payerDashabordPaginationQuery: "Select * from [ProperPay].[AuditInfo] where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('S002245','S007409','S005290','000020180','000020613','000020100','000020264','000020008')"
+#IPfinalAppealsSqlQuery: "Select * from [ProperPay].[AuditInfo] where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('S002245','S007409','S005290','000020180','000020613','000020100','000020264','000020008') and ClaimType = 'I' "
+#OPfinalAppealsSqlQuery: "Select * from [ProperPay].[AuditInfo] where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('S002245','S007409','S005290','000020180','000020613','000020100','000020264','000020008') and ClaimType = 'O' "
+#FinalAppealsDetailsSqlQuery: "Select * from PROPERPAY.findingsDetail where auditnumber=auditNumber  order by LetterSentDate desc"
+#IPOutstandingfinalAppealsSqlQuery: "Select * from [ProperPay].[AuditInfo] where AuditStatus in('AppealSubmitted') and billingprovidernumber in ('S002245','S007409','S005290','S007733') and ClaimType = 'I'"
+
+
+#cloud DB Queries
+payerDashabordSqlQuery1: "Select * from RS.Audit_AuditInfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940','000390228','000324354')"
+payerDashabordSqlQuery2: "Select * from RS.Audit_FindingsDetail where AuditNumber = "
+payerDashabordSqlQuery3: "Select * from RS.Audit_AuditInfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and ClaimType = 'I'"
+payerDashabordSqlQuery4: "Select * from RS.Audit_AuditInfo where ReadyForAdjustment = 1  and Auditstatus='OutstandingAdjustmentRequest' and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and ClaimType = 'O'"
+payerDashabordSqlQuery5: "SELECT DISTINCT ai.AuditNumber, ai.ClaimNumber, ai.ClaimKey, ai.AuditStatus, ai.BillingProviderNumber, line.*, fd.NewGrossPay,fd.NewNetPay, fd.IdentifiedGrossSavings,fd.IdentifiedNetSavings FROM RS.Audit_AuditInfo ai LEFT JOIN RS.Audit_BillLine line ON line.AuditInfoID = ai.ID LEFT JOIN RS.Audit_FindingsDetail fd ON fd.AuditInfoID = ai.ID Where ai.auditnumber= "
+PayerDashboard_Analytics_ReportName: "Audit Summaries by Errors"
+OutstandingfinalAppealsSqlQuery: "Select * from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on a.id=b.auditinfoid where AuditStatus in('AppealSubmitted') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940')"
+finalAppealsSqlQuery: "Select * from RS.Audit_AuditInfo where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940')"
+payerDashabordPaginationQuery: "Select * from RS.Audit_AuditInfo where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940')"
+IPfinalAppealsSqlQuery: "Select * from RS.Audit_AuditInfo where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and ClaimType = 'I' "
+OPfinalAppealsSqlQuery: "Select * from RS.Audit_AuditInfo where AuditStatus in('FinalAppealAdjustedWithVariance','FinalAppealConfirmed','FinalAppealNotMade','AppealSubmitted') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and ClaimType = 'O' "
+FinalAppealsDetailsSqlQuery: "Select * from RS.Audit_FindingsDetail where auditnumber=auditNumber  order by LetterSentDate desc"
+IPOutstandingfinalAppealsSqlQuery: "Select * from RS.Audit_AuditInfo where AuditStatus in('AppealSubmitted') and billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and ClaimType = 'I'"

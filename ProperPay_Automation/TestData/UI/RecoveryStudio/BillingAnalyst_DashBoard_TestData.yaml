@@ -1,0 +1,200 @@
+URL1:
+PtAccNumAudit: '2933'
+PtAccNumAudit2: '2933'
+PtAccNumAppeal:  '1738'
+PtAccNumAppeal2:  '2529'
+PtAccNumAppeal3:  '6234'
+PtAccNumAppeal4: '9761'
+AuditREPtAccNum:  '2933'
+AppealREPtAccNum:  '1738'
+REPtAccNumAudit:  '1738'
+REPtAccNumAppeal:  '1222'
+ReqExtnPtNameAppeal: Margie Mildred Fortier
+ReqExtnPtNameAudit: Bobbi Antonette Hawkinberry
+ReqExtnPtAccNum3:  '1738'
+REPtAccNum_OvrDue2: '3065'
+#PdfFilepath: "C:\\gitrep\\properpay-automation\\PPay_Project\\TestData\\Portal Certificate Instructions.pdf"
+#PdfFilepath1: "C:\\gitrep\\properpay-automation\\PPay_Project\\TestData\\100mb.pdf"
+#NonPdfFilePath: "C:\\gitrep\\properpay-automation\\PPay_Project\\TestData\\manual console.PNG"
+#PdfFilepath: "C:\\GitRepo\\properpay-automation\\PPay_Project\\TestData\\Portal Development Process & Tips.pdf"
+#NonPdfFilePath:  "C:\\GitRepo\\properpay-automation\\PPay_Project\\\\TestData\\manual console.PNG"
+#PdfFilepath1: "C:\\GitRepo\\properpay-automation\\PPay_Project\\TestData\\PDF 2.pdf"
+#PdfFilepath: "C:\\Comm-portal\\communication-portal-automation\\ProperPay_Automation\\TestData\\UI\\RecoveryStudio\\Portal Development Process & Tips.pdf"
+PdfFilepath: "\\TestData\\UI\\RecoveryStudio\\Portal Development Process & Tips.pdf"
+NonPdfFilePath:  "\\TestData\\UI\\RecoveryStudio\\manual console.PNG"
+NonPdfFilePath1:  "\\ProperPay_Automation\\TestData\\UI\\RecoveryStudio\\100mb.pdf"
+PdfFilepath1:  "\\TestData\\UI\\RecoveryStudio\\Portal Certificate Instructions.pdf"
+AuditResultsDownloadedExcelPath: "/Downloads/AuditResults-"
+
+CheckboxOptions1: Itemized Bill
+CheckboxOptions2: Medical Record
+CheckboxOptions3: Face Sheet
+PDFFileName: Portal Development Process & Tips.pdf
+PDFFileNameUpload: Portal Development Process & Tips.pdf
+PDFFileSizeUpload: 0.84 MB
+PDFFileploadUser: Provider User
+DefaultIndex: '1'
+AppealReason:  Test Appeal reason
+#Esignature : Provider User
+#Title: Records/Billing Analyst
+
+PtName: Bobbi Antonette Hawkinberry
+DOB: 07/29/1956
+AuditNum: 14508815
+DOS: 02/29/2016 - 03/02/2016
+MediRecNum: MR00501
+ClaimNum: CLM097386058824874
+ProviderName: Provider0015, Lonnie Luke
+ProviderNumber: 390028
+ProviderID: 390028
+AppealDecision: N/A
+
+Esignature : Provider User
+Title: Records/Billing Analyst
+SubscriberID: 8499
+GroupID: 33486
+ClaimType: Outpatient
+AuditStatus: Findings Notification Sent
+AuditType: MNPA
+DivisionCode: 21
+AdmitDate: 02/29/2016
+DischargeDate: 03/02/2016
+
+AppealfindingTile_PtName: Margie Mildred Fortier
+AppealfindingTile_DOB: 05/24/1936
+AppealfindingTile_DOS: 07/02/2014 - 07/10/2014
+AppealfindingTile_AuditNum: 14508348
+AppealfindingTile_MediRecNum: MR00465
+AppealfindingTile_ClaimNum: CLM066574438413081
+AppealfindingTile_ProviderName: Provider0015, Lonnie Luke
+AppealfindingTile_ProviderNumber: 390028
+AppealfindingTile_SubscriberID: 5826
+AppealfindingTile_GroupID: 33540
+AppealfindingTile_ClaimType: Outpatient
+AppealfindingTile_AuditStatus: Findings Notification Sent
+AppealfindingTile_AuditType: MSDRG
+AppealfindingTile_DivisionCode: 26
+AppealfindingTile_AdmitDate: 07/02/2014
+AppealfindingTile_DischargeDate: 07/10/2014
+AppealfindingTile_AppealDecision: UPH
+
+#AN
+PtAccNumFilter: '2933'
+MedicalRecNumberFilter: 'MR00501'
+AuditNumberFilter:  '14508668'
+ProviderNumberFilter: '390028'
+ClaimNumberFilter: 'CLM097386058824874'
+AppealDecisionFilterOption: 'Appeal Is Modified'
+AppealDecisionFilterMws: MWS
+AppealDecisionFilterMod: MOD
+PtAccNumFilterRA: '8765'
+
+#Teams Queries
+#baDashabordAuditQueryAppealQuery: "select * from [ProperPay].[AuditInfo]  a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where billingprovidernumber in ('002767105','000303755','000303865','000324349','000390049','000390041','000390267','000390030','000390201') and auditstatus in ('AppealResponseOverdue','AppealIsModified') and Canappeal=1"
+#baDashabordAuditQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on  a.id=b.auditinfoid where billingprovidernumber in ('S005217','S007409','000390228','002767103','000390267','002767249','000324349','002767103','000390194') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent') and Canappeal=1"
+#baDashabordAuditExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate,  a.* from [ProperPay].[AuditInfo] a
+#                                 join [CAS_REceive].[postage].[ReceivedClaims] b on a.auditnumber=b.auditnumber
+#                                 Join ProperPay.FindingsDetail fd on a.auditnumber=fd.auditnumber
+#                                 where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from [CAS_REceive].[postage].[ExtensionClaims] c where c.ReceivedClaimID = b.ReceivedClaimID)
+#                                 and  b.LetterType='FINDALL' and a.auditstatus='FindingsNotificationSent' and
+#                                 billingprovidernumber in ('000390194','000303755','000303865','002767249','002767249','002767249') "
+#baDashabordAuditOverdueQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where billingprovidernumber in ('000390228','002767103','000390267','002767249','000324349','002767103','000390194') and auditstatus in ('FindingsResponseOverdue') and Canappeal=1"
+#baDashabordAppealReasonQuery: "Select * from [ProperPay].[AppealInfo]  where auditNumber = texttoreplace"
+#baDashabordAppealExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate,  a.* from [ProperPay].[AuditInfo] a
+#                                  join [CAS_REceive].[postage].[ReceivedClaims] b on a.auditnumber=b.auditnumber
+#                                  Join ProperPay.FindingsDetail fd on a.auditnumber=fd.auditnumber
+#                                  where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from [CAS_REceive].[postage].[ExtensionClaims] c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType in ('APALL2','APALL1') and a.auditstatus in ('AppealIsModified')
+#								  and billingprovidernumber in (000390194,000390267)"
+
+#baDashabordLevel1AppealQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[AppealInfo] appeal on a.id=appeal.auditinfoid join [ProperPay].[FindingsDetail] fd on appeal.ID = fd.AppealInfoID where billingprovidernumber in ('000390041','000303755','000303865','000324349','000390049','000390267','000390030','000390201','002767105','000390194') and  auditstatus in ('AppealResponseOverdue','AppealIsModified') and  AppealType = 'LEV1' and appeal.CanAppeal=1"
+#baDashabordLevel2AppealQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[AppealInfo] appeal on a.id=appeal.auditinfoid join [ProperPay].[FindingsDetail] fd on appeal.ID = fd.AppealInfoID where billingprovidernumber in ('000390041','000303755','000303865','000324349','000390049','000390267','000390030','000390201','002767105','000390194') and auditstatus in ('AppealResponseOverdue','AppealIsModified') and  AppealType = 'LEV2'"
+
+#baDashboardListAuditQuery : "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on  a.id=b.auditinfoid where  a.auditNumber= "
+#baDashabordPaginationQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on  a.id=b.auditinfoid where billingprovidernumber in ('000390228','002767103','002767105','002767249','000390228','002767103','000390267','002767249','000324349') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent','AppealResponseOverdue','AppealIsModified')"
+#baDashboardOutpatientRecordQuery: "select * from [ProperPay].[AuditInfo] where  billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent','AppealResponseOverdue','AppealIsModified')  and claimType = 'O'"
+#baDashabordAppealExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate,  a.* from [ProperPay].[AuditInfo] a join [CAS_REceive].[postage].[ReceivedClaims] b on a.auditnumber=b.auditnumber Join [ProperPay].[FindingsDetail] fd on a.auditnumber=fd.auditnumber where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from [CAS_REceive].[postage].[ExtensionClaims] c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType in ('APALL2','APALL1') and a.auditstatus in ('AppealIsModified') and billingprovidernumber in('002767103','000390041','000324354','002767249','002767249','000324349')"
+
+########Cloud DB Queries
+baDashabordAuditQuery: "select * from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on a.id=b.auditinfoid where billingprovidernumber in ('001340001','000390044') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent')"
+baDashabordAppealQuery: "select * from RS.Audit_AuditInfo  a join RS.Audit_RecordRequest b on a.id=b.auditinfoid where billingprovidernumber in ('002767249','001969940','000390194','000390267','000390030') and auditstatus in ('AppealResponseOverdue','AppealIsModified') and Canappeal=1"
+baDashabordAuditExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate,  a.* from RS.Audit_AuditInfo a join ADS.Receive_ReceivedClaims b on a.auditnumber=b.auditnumber Join RS.Audit_FindingsDetail fd on a.auditnumber=fd.auditnumber
+                                 where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from ADS.Receive_ExtensionClaims c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType='FINDALL' and a.auditstatus='FindingsNotificationSent' and  billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940')"
+baDashabordAuditOverdueQuery: "select * from [ProperPay].[AuditInfo] a join [ProperPay].[MedicalRecordRequest] b on a.id=b.auditinfoid where billingprovidernumber in ('000390228','002767103','000390267','002767249','000324349','002767103','000390194') and auditstatus in ('FindingsResponseOverdue') and Canappeal=1"
+baDashabordAppealReasonQuery: "Select * from RS.Audit_AppealInfo where auditNumber = texttoreplace"
+
+baDashabordLevel1AppealQuery: "select * from RS.Audit_AuditInfo a join RS.Audit_AppealInfo appeal on a.id=appeal.auditinfoid join RS.Audit_FindingsDetail fd on appeal.ID = fd.AppealInfoID where  billingprovidernumber in ('002767249','000324349','002767103','000390267','000390041','000390201') and auditstatus in ('AppealResponseOverdue','AppealIsModified') and  AppealType = 'LEV1' and appeal.CanAppeal=1"
+baDashabordLevel2AppealQuery: "select * from RS.Audit_AuditInfo a join RS.Audit_AppealInfo appeal on a.id=appeal.auditinfoid join RS.Audit_FindingsDetail fd on appeal.ID = fd.AppealInfoID where  billingprovidernumber in ('002767249','000324349','002767103','000390267','000390041','000390201') and auditstatus in ('AppealResponseOverdue','AppealIsModified') and  AppealType = 'LEV2'"
+baDashboardListAuditQuery : "select * from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on  a.id=b.auditinfoid where  a.auditNumber= "
+baDashabordPaginationQuery: "select * from RS.Audit_AuditInfo a join RS.Audit_RecordRequest b on  a.id=b.auditinfoid where billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent','AppealResponseOverdue','AppealIsModified')"
+baDashboardOutpatientRecordQuery: "select * from RS.Audit_AuditInfo where  billingprovidernumber in ('003356568','001969940','002767249','000390100','002767249','001969940') and auditstatus in ('FindingsResponseOverdue', 'FindingsNotificationSent','AppealResponseOverdue','AppealIsModified')  and claimType = 'O'"
+baDashabordAppealExtensionQuery: "Select distinct a.auditnumber, b.lettersource, b.lettertype, b.letterdate,  a.* from RS.Audit_AuditInfo a join ADS.Receive_ReceivedClaims b on a.auditnumber=b.auditnumber Join RS.Audit_FindingsDetail fd on a.auditnumber=fd.auditnumber where b.ReceivedClaimID NOT IN (select c.ReceivedClaimID from ADS.Receive_ExtensionClaims c where c.ReceivedClaimID = b.ReceivedClaimID) and  b.LetterType in ('APALL2','APALL1') and a.auditstatus in ('AppealIsModified') and billingprovidernumber in('002767103','000390041','000324354','002767249','002767249','000324349')"
+
+#############################################################################################################
+#
+#
+#URL2:
+#PtAccNumAudit: '002811'
+#PtAccNumAudit2: '005625'
+#PtAccNumAppeal:  '005841'
+#PtAccNumAppeal2:  'no'
+#PtAccNumAppeal3:
+#AuditREPtAccNum:  '008649'
+#AppealREPtAccNum:  '005841'
+#REPtAccNumAudit:  '1738'
+#REPtAccNumAppeal:  '1222'
+#ReqExtnPtNameAppeal: Ray Kenneth Blackledge
+#ReqExtnPtNameAudit: Wanda Aletha Mccardle Jr
+#ReqExtnPtAccNum3:  '008649'
+#REPtAccNum_OvrDue2: '001724'
+#
+#
+#PtName: Brianna Alexandra Frost
+#SubID: 006243
+#DOB: 02/29/1972
+#AuditNum: 16135947
+#DOS: 12/09/2020 - 12/10/2020
+#MediRecNum: 005039
+#ClaimNum: CLM0625542464062018
+#ProviderName: Provider0099
+#ProviderNumber: 000300929
+#ProviderID: 000300929
+#AppealDecision: N/A
+#
+#Esignature : Provider User
+#Title: Records/Billing Analyst
+#SubscriberID: 003197
+#GroupID: ITS443001
+#ClaimType: Outpatient
+#AuditStatus: Findings Response Overdue
+#AuditType: CHG
+#DivisionCode: 4
+#AdmitDate: 12/08/2020
+#DischargeDate: 12/09/2020
+#
+#AppealfindingTile_PtName: Ray Kenneth Blackledge
+#AppealfindingTile_DOB: 08/23/1966
+#AppealfindingTile_DOS: 03/17/2021 - 03/20/2021
+#AppealfindingTile_AuditNum: 9055646
+#AppealfindingTile_MediRecNum: 005072
+#AppealfindingTile_ClaimNum: CLM0918476465152384
+#AppealfindingTile_ProviderName: Provider0056
+#AppealfindingTile_ProviderNumber: 000324349
+#AppealfindingTile_SubscriberID: 003817
+#AppealfindingTile_GroupID: ITS443001
+#AppealfindingTile_ClaimType: Inpatient
+#AppealfindingTile_AuditStatus: Appeal Is Modified
+#AppealfindingTile_AuditType: CH
+#AppealfindingTile_DivisionCode: 4
+#AppealfindingTile_AdmitDate: 03/17/2021
+#AppealfindingTile_DischargeDate: 03/20/2021
+#AppealfindingTile_AppealDecision: MWS
+#
+##AN
+#PtAccNumFilter: '001724'
+#MedicalRecNumberFilter: '009712'
+#AuditNumberFilter:  '16142420'
+#ProviderNumberFilter: '000300929'
+#ClaimNumberFilter: 'CLM0625542464062018'
+#AppealDecisionFilterOption: 'Appeal Is Modified'
+#AppealDecisionFilter: MWS
+#PtAccNumFilterRA: '006994'

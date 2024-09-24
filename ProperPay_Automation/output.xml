@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20240902 13:30:36.975" rpa="false" schemaversion="3">
+<suite id="s1" name="CommunicationPortal BillingAnalyst DashBoardsTestCases" source="C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\TestRepo\UI\RecoveryStudio\RegressionSuite\CommunicationPortal_BillingAnalyst_DashBoardsTestCases.robot">
+<test id="s1-t1" name="Test 1 :ProperPay:Communication Portal BA Dashboard_validate_Respond to the Audit Findings." line="19">
+<kw name="Launch Cloud Communication Portal Page" library="CommonFunctionality" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240902 13:30:38.624" endtime="20240902 13:30:38.624"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240902 13:30:38.625" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000025685CA64D0&gt;</msg>
+<status status="PASS" starttime="20240902 13:30:38.624" endtime="20240902 13:30:38.625"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240902 13:30:38.625" endtime="20240902 13:30:38.625"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240902 13:30:38.626" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20240902 13:30:38.625" endtime="20240902 13:30:41.042"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${cloud_comm_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240902 13:30:41.043" level="INFO">Opening url 'https://qa-recoverystudio.properpay.cgi.com/'</msg>
+<status status="PASS" starttime="20240902 13:30:41.043" endtime="20240902 13:30:49.414"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10x</arg>
+<arg>2s</arg>
+<arg>Title Should Be</arg>
+<arg>${comm_LandingPageTitle}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${comm_LandingPageTitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20240902 13:30:49.441" level="INFO">Page title is 'ProperPayPortal'.</msg>
+<status status="PASS" starttime="20240902 13:30:49.415" endtime="20240902 13:30:49.442"/>
+</kw>
+<status status="PASS" starttime="20240902 13:30:49.415" endtime="20240902 13:30:49.442"/>
+</kw>
+<status status="PASS" starttime="20240902 13:30:38.624" endtime="20240902 13:30:49.442"/>
+</kw>
+<kw name="Connect to Cloud DB to Read the Test Data According to TestData Avaialablity" library="CommonFunctionality">
+<arg>${baDashabordAuditQuery}</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>DatabaseConnection.readTheDataFromCloudDBAccordingToDB</arg>
+<arg>HMBCBS_CONF</arg>
+<arg>${sqlQuery}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="DatabaseConnection.readTheDataFromCloudDBAccordingToDB">
+<arg>HMBCBS_CONF</arg>
+<arg>${sqlQuery}</arg>
+<msg timestamp="20240902 13:30:49.478" level="FAIL">No keyword with name 'DatabaseConnection.readTheDataFromCloudDBAccordingToDB' found.</msg>
+<status status="FAIL" starttime="20240902 13:30:49.478" endtime="20240902 13:30:49.478"/>
+</kw>
+<status status="FAIL" starttime="20240902 13:30:49.448" endtime="20240902 13:30:49.479"/>
+</kw>
+<kw name="Read Csv File" library="Read_csv">
+<var>${data_list}</var>
+<status status="NOT RUN" starttime="20240902 13:30:49.480" endtime="20240902 13:30:49.480"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${testdata_length}</var>
+<arg>${data_list}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.480" endtime="20240902 13:30:49.481"/>
+</kw>
+<if>
+<branch type="IF" condition="${testdata_length} &gt; 0">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${data_list}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.481" endtime="20240902 13:30:49.481"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DBName}</var>
+<arg>HMBCBS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.481" endtime="20240902 13:30:49.481"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DBName}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.481" endtime="20240902 13:30:49.481"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${DBName}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.482" endtime="20240902 13:30:49.482"/>
+</kw>
+<status status="NOT RUN" starttime="20240902 13:30:49.481" endtime="20240902 13:30:49.482"/>
+</branch>
+<status status="NOT RUN" starttime="20240902 13:30:49.481" endtime="20240902 13:30:49.482"/>
+</if>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${testdata_length} &lt; 1</arg>
+<arg>Fail</arg>
+<arg>Test data length is less than 1</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20240902 13:30:49.482" endtime="20240902 13:30:49.482"/>
+</kw>
+<status status="FAIL" starttime="20240902 13:30:49.447" endtime="20240902 13:30:49.483"/>
+</kw>
+<kw name="Valid User Login According to Test Data Availability" library="LoginPage">
+<arg>${BA_comm_usr_name}</arg>
+<arg>${BA_comm_pass}</arg>
+<status status="NOT RUN" starttime="20240902 13:30:49.485" endtime="20240902 13:30:49.485"/>
+</kw>
+<kw name="Click Audit Results Tab" library="BillingAnalyst_Dashboard">
+<status status="NOT RUN" starttime="20240902 13:30:49.486" endtime="20240902 13:30:49.486"/>
+</kw>
+<kw name="Return AuditFindings Review Button locator with patient account number passed by user" library="BillingAnalyst_Dashboard">
+<arg>${data_list[0]['PatientAccountNumber']}</arg>
+<status status="NOT RUN" starttime="20240902 13:30:49.486" endtime="20240902 13:30:49.486"/>
+</kw>
+<kw name="Click Review button_AuditFinding" library="BillingAnalyst_Dashboard">
+<status status="NOT RUN" starttime="20240902 13:30:49.487" endtime="20240902 13:30:49.487"/>
+</kw>
+<kw name="Scroll down to the bottom of page" library="BillingAnalyst_Dashboard">
+<status status="NOT RUN" starttime="20240902 13:30:49.487" endtime="20240902 13:30:49.487"/>
+</kw>
+<kw name="Verify Agree with Findings button is present" library="BillingAnalyst_Dashboard">
+<status status="NOT RUN" starttime="20240902 13:30:49.487" endtime="20240902 13:30:49.487"/>
+</kw>
+<kw name="Verify Appeal Findings button is present" library="BillingAnalyst_Dashboard">
+<status status="NOT RUN" starttime="20240902 13:30:49.488" endtime="20240902 13:30:49.488"/>
+</kw>
+<kw name="Finish TestCase" library="CommonFunctionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240902 13:30:49.491" endtime="20240902 13:30:52.233"/>
+</kw>
+<status status="PASS" starttime="20240902 13:30:49.490" endtime="20240902 13:30:52.234"/>
+</kw>
+<doc>This test case Verifies that the Appeal Findings and Agree with Findings button is present to respond to Audit findings.</doc>
+<tag>TS11_TC_001</tag>
+<status status="FAIL" starttime="20240902 13:30:38.621" endtime="20240902 13:30:52.296">No keyword with name 'DatabaseConnection.readTheDataFromCloudDBAccordingToDB' found.</status>
+</test>
+<doc>Communication Portal Billing Analyst DashBoard Functioal test</doc>
+<status status="FAIL" starttime="20240902 13:30:36.979" endtime="20240902 13:30:52.304"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">TS11_TC_001</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="CommunicationPortal BillingAnalyst DashBoardsTestCases">CommunicationPortal BillingAnalyst DashBoardsTestCases</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240902 13:30:37.337" level="ERROR">Error in file 'C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\Resource\UI\CommonFunctionality\CommonFunctionality.robot' on line 6: Importing library 'C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\Resource\Database\DatabaseConnection.py' failed: ModuleNotFoundError: No module named 'pyodbc'
+Traceback (most recent call last):
+  File "C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\Resource\Database\DatabaseConnection.py", line 1, in &lt;module&gt;
+    import pyodbc
+PYTHONPATH:
+  C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\Resource\Database
+  C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\win32
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\win32\lib
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\Pythonwin</msg>
+<msg timestamp="20240902 13:30:38.074" level="ERROR">Error in file 'C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation\Resource\UI\CommonFunctionality\CommonFunctionality.robot' on line 9: Importing library 'ExcelLibrary' failed: ModuleNotFoundError: No module named 'ExcelLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Properpay_Automation_New\communication-portal-automation\ProperPay_Automation
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\win32
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\win32\lib
+  C:\Users\ai.k\AppData\Local\Programs\Python\Python310\lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

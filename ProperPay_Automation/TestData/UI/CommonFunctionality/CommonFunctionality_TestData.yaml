@@ -1,0 +1,35 @@
+BROWSER:    Chrome
+BROWSER1: Edge
+#Admin_comm_url:    https://w2k19-ppweb-01.ams.com:5001/en-GB
+#Admin_comm_url:    https://ppayportalwe201.cgicleve.com:5001/
+Admin_comm_url:  https://dev-adminui.properpay.cgi.com/en-GB
+#comm_url:    https://w2k19-ppweb-01.ams.com/
+comm_url:    http://portal.cgicleve.com/
+cloud_comm_url:    https://qa-recoverystudio.properpay.cgi.com/
+#comm_url:     http://portaltest.cgicleve.com/
+comm_usr_name:    ProviderUser
+comm_pass:    Portal2021!
+comm_usr_name1:  satheesh.arunachalam@cgi.com
+comm_pass1:      Sa1234@cgi
+comm_pass_empty: ''
+comm_usr_name_empty: ''
+comm_LandingPageTitle:    ProperPayPortal
+Admin_comm_LandingPageTitle:    AdminUI
+Admin_comm_LoginPageTitle:    Login | IdentityServer
+UserName: ProviderUser
+Reset_Role: Billing Analyst
+Required_Role: Record Analyst
+Reset_Role2: Record Analyst
+Required_Role2: Billing Analyst
+PtName1:  'Margie Mildred Fortier'
+PtName2:  'Angel Jonathan Peden'
+PtName3:  'Raven Josephine Mcgrew'
+PtName4:  'Alysha Mary Archie'
+PatientName_Header: 'Margie Mildred Fortier'
+
+
+#satheesh
+PtAccNum: '1738'
+PtRecNum: '16530'
+PtName5: 'Luis Fred Price'
+PtName6: 'Theresa Ivy Hiatt'
